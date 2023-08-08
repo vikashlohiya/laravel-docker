@@ -28,7 +28,6 @@ class TodoController extends Controller {
     }
 
     public function index(Request $request) {
-        echo phpinfo();
         $allTask = \App\Models\Todo::all();
         return view('welcome')->with('tasks', $allTask);
     }
