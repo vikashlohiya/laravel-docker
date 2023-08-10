@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+  backend:
+    container_name: laravel-docker
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: your_username
+      MYSQL_PASSWORD: your_password
+      MYSQL_DB: your_database
+    depends_on:
+      - mysql
+
+  mysql:
+     image: mysql:5.7
+     environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: auth_app
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: 123456
+     ports:
+       - 3306:3306
+     volumes:
+      - mysql-data:/var/lib/mysql  # Mount the volume for MySQL data storage
+
+volumes:
+  mysql-data:
+
