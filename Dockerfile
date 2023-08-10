@@ -28,11 +28,13 @@ RUN chown -R www-data:www-data /var/www/html \
 
 RUN composer install --optimize-autoloader --no-dev
 
+
 # Run migrations
 #CMD ["php", "artisan", "migrate"]
 RUN chmod +x /var/www/html/run.sh
 
 CMD ["/var/www/html/run.sh"]
+
 
 CMD ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "8000"]
 
