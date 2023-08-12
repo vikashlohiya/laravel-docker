@@ -6,7 +6,7 @@ services:
     build:
       context: .
     volumes:
-      - /path/on/host:/var/www/html  
+      - /home/ubuntu/projects/laravel-docker:/var/www/html  
     ports:
       - "8000:8000"
     environment:
