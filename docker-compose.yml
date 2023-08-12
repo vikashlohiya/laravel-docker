@@ -10,10 +10,11 @@ services:
     ports:
       - "8000:8000"
     environment:
-      MYSQL_HOST: mysql
-      MYSQL_USER: your_username
-      MYSQL_PASSWORD: your_password
-      MYSQL_DB: your_database
+      DB_HOST: mysql
+      DB_USERNAME: root
+      DB_PASSWORD: 123456
+      DB_DATABASE: auth_app
+      DB_TEST: vikash
     depends_on:
       - mysql
 
