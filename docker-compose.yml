@@ -5,6 +5,8 @@ services:
     container_name: laravel-docker
     build:
       context: .
+    volumes:
+      - /path/on/host:/var/www/html  
     ports:
       - "8000:8000"
     environment:
